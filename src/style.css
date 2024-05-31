@@ -1,1 +1,37 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background-color: rgb(14, 126, 17);
+}
+
+#mainCard {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  width: 200px;
+  height: 250px;
+}
+
+#suitTopLeft {
+  margin-bottom: auto;
+  margin-right:auto;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: x-large;
+}
+
+#rank {
+  color: green;
+  align-self: center;
+  font-size: 72px;
+  color: black;
+}
+
+#suitBottomRight {
+  font-size: 20px;
+  margin-left: auto;
+  margin-top: auto;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  font-size: x-large;
+}
