@@ -1,47 +1,30 @@
-console.log("Generating random card...");
+/* eslint-disable */
+import "bootstrap";
+import "./style.css";
 
-let ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "K", "Q", "J", "A"];
-let suitsShape = ["Heart", "Spade", "Flower", "Diamond"];
-let suitColor = ["red", "black"];
+import "./assets/img/rigo-baby.jpg";
+import "./assets/img/4geeks.ico";
 
-let randomRank = Math.round(Math.random() * 12);
-let randomSuitShape = Math.round(Math.random() * 3);
-let randomSuitColor = Math.round(Math.random() * 1);
+window.onload = function() {
+  console.log("Generating random card...");
 
-let randomSuitShapeIconTop = '';
-let randomSuitShapeIconBottom = '';
+  let ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "K", "Q", "J", "A"];
+  let suitShape = ["♦", "♥", "♠", "♣"];
+  let suitColor = ["red", "black"];
 
-document.getElementById('suitTopLeft').style.color = suitColor[randomSuitColor];
+  let randomRank = Math.round(Math.random() * 12);
+  let randomSuitShape = Math.round(Math.random() * 3);
+  let randomSuitColor = Math.round(Math.random() * 1);
 
-/* suitShape[randomSuitShape]; */
+  document.getElementById("suitTopLeft").style.color =
+    suitColor[randomSuitColor];
+  document.getElementById("suitBottomRight").style.color =
+    suitColor[randomSuitColor];
 
-console.log("randomSuitShape", randomSuitShape)
+  document.getElementById("suitTopLeft").innerHTML = suitShape[randomSuitShape];
 
-switch (suitsShape[randomSuitShape]) {
-  case 'Heart':
-		randomSuitShapeIconTop = '<i class="fa-solid fa-heart"></i>';
-		randomSuitShapeIconBottom = '<i class="fa-solid fa-heart fa-flip-vertical"></i>';
-    break;
-  case 'Spade':
-		randomSuitShapeIconTop = '<i class="fa-solid fa-spade"></i>'
-		randomSuitShapeIconBottom = '<i class="fa-solid fa-spade fa-flip-vertical"></i>'
-    break;    
-  case 'Flower':
-		randomSuitShapeIconTop = '<i class="fa-solid fa-club"></i>'
-		randomSuitShapeIconBottom = '<i class="fa-solid fa-club fa-flip-vertical"></i>'
-    break;
-  case 'Diamond':
-		randomSuitShapeIconTop = '<i class="fa-solid fa-diamond"></i>';
-		randomSuitShapeIconBottom = '<i class="fa-solid fa-diamond fa-flip-vertical"></i>';
-    break;
-}
+  document.getElementById("rank").innerHTML = ranks[randomRank];
 
-console.log("randomSuitShapeIconTop", randomSuitShapeIconTop);
-console.log("randomSuitShapeIconBottom", randomSuitShapeIconBottom)
-
-document.getElementById('suitTopLeft').innerHTML = randomSuitShapeIconTop;
-
-document.getElementById('rank').innerHTML = ranks[randomRank];
-
-document.getElementById('suitBottomRight').style.color = suitColor[randomSuitColor];
-document.getElementById('suitBottomRight').innerHTML = randomSuitShapeIconBottom;
+  document.getElementById("suitBottomRight").innerHTML =
+    suitShape[randomSuitShape];
+};
